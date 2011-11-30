@@ -2,14 +2,14 @@
 /*
 Plugin Name: OS Post Gallery
 Description: Automatically lists all the attached images for a particular post in a user-friendly manner.
-Version: 0.7
+Version: 0.8
 Author: Oli Salisbury
 */
 
 //Config
 $hide_featured_image = false;
 $os_postgallery_post_types_in = array(
-	'event' => array()
+	'gallery' => array()
 );
 
 /*
@@ -102,12 +102,6 @@ function os_postgallery_init_js() {
 	echo '
 	<script type="text/javascript" charset="utf-8">
 	jQuery(document).ready(function(){
-		//hide redundant boxes
-		jQuery("#gallery-settings").hide();
-		jQuery("tr.url").hide();
-		jQuery("tr.align").hide();
-		jQuery("tr.image-size").hide();
-		jQuery("td.savesend input").hide();
 		//ajax update
 		jQuery("#os_postgallery_ajaxclick").click(function() {
 			jQuery("#os_postgallery_alert").hide();
@@ -158,6 +152,12 @@ function os_postgallery_css() {
 		position: absolute;
 		width: 0;
 	}
+	/*hide redundant boxes*/
+	#gallery-settings { display:none !important; }
+	tr.url { display:none !important; }
+	tr.align { display:none !important; }
+	tr.image-size { display:none !important; }
+	td.savesend input { display:none !important; }
 	</style>';
 }
 
