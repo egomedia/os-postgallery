@@ -2,14 +2,15 @@
 /*
 Plugin Name: OS Post Gallery
 Description: Automatically lists all the attached images for a particular post in a user-friendly manner.
-Version: 0.8
+Version: 0.9
 Author: Oli Salisbury
 */
 
 //Config
 $hide_featured_image = false;
 $os_postgallery_post_types_in = array(
-	'gallery' => array()
+	'page' => array(),
+	'post' => array(),
 );
 
 /*
@@ -133,13 +134,13 @@ function os_postgallery_css() {
 	echo '
 	<style type="text/css">
 	#os_postgallery { padding:10px 10px 0 10px; }
-	#os_postgallery_buttons { margin-bottom:20px; }
+	#os_postgallery_buttons { margin-bottom:20px; position:relative; }
 	#os_postgallery ul { margin:0; padding:0; list-style:none; }
-	#os_postgallery li { margin:0 10px 10px 0; padding:10px; width:150px; display:inline-block; overflow:hidden; position:relative; min-height:150px; vertical-align:top; zoom:1; *display:inline; }
-	#os_postgallery li.featured_image { border:2px solid red; }
+	#os_postgallery li { margin:0 10px 10px 0; padding:11px 10px; width:150px; display:inline-block; overflow:hidden; position:relative; min-height:150px; vertical-align:top; zoom:1; *display:inline; }
+	#os_postgallery li.featured_image { padding:10px; border:2px solid red; }
 	#os_postgallery img { margin:0 0 5px 0; width:150px; height:auto; }
 	#os_postgallery b { display:block; padding:3px; color:#fff; background:red; position:absolute; bottom:0; right:0; font-size:9px; }
-	#os_postgallery_alert { display:none; position:absolute; top:5px; left:130px; z-index:100; }
+	#os_postgallery_alert { display:none; position:absolute; top:-32px; left:130px; z-index:100; }
 	#os_postgallery_alert em { display:block; background:#fff59b; padding:10px; position:relative; }
 	#os_postgallery_alert em:after { 
 		border-color: #fff59b transparent;
